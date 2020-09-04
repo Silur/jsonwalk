@@ -1,0 +1,30 @@
+{
+  "name": "jsonwalk",
+  "version": "0.1.0",
+  "description": " Recursively traverse JSON data with jq syntax and apply functions on it's fields ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Silur/jsonwalk.git"
+  },
+  "keywords": [
+    "json",
+    "deep",
+    "recursive",
+    "walk",
+    "traverse"
+  ],
+  "author": "Silur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Silur/jsonwalk/issues"
+  },
+  "homepage": "https://github.com/Silur/jsonwalk#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3"
+  }
+}
