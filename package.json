@@ -4,7 +4,8 @@
   "description": " Recursively traverse JSON data with jq syntax and apply functions on it's fields ",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+	"lint": "standard --env mocha"
   },
   "repository": {
     "type": "git",

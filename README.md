@@ -9,30 +9,37 @@ This tool allows you to walk a JSON object recursively given a jq-like query arr
 const jsonwalk = require('jsonwalk')
 
 const myJson = {
-	"Product Name": "Bowler Hat",
-    "ProductID": 858383,
-    "SKU": "0406654608",
-    "Description": {
-    	"Colour": "Purple",
-    	"Width": 300,
-    	"Height": 200,
-    	"Depth": 210,
-    	"Weight": 0.75
-     },
-    "Price": 34.45,
-    "Quantity": 2,
-	"tags": ['clothing', 'hats']
+    "Product Name": "Bowler Hat",
+      "ProductID": 858383,
+      "SKU": "0406654608",
+      "Description": {
+              "Colour": "Purple",
+              "Width": 300,
+              "Height": 200,
+              "Depth": 210,
+              "Weight": 0.75
+             },
+      "Price": 34.45,
+      "Quantity": 2,
+    "tags": ['clothing', 'hats']
 
 }
 
 const query = ['Description.Width', 'Description.Height']
 
-function makeBigger(obj, index, elem) {
-	console.log(elem)
-	return elem*2 // double the size
+function makeBigger(key, value) {
+    console.log(value)
+    return value*2 // double the size
 }
 
-jsonwalk.walk(myJson, query, makeBigger)
+(async () => {
+  jsonwalk.walk(myJson, query, makeBigger)
+})()
+/* should return: 
+ * 300
+ * 200
+ */
+
 ```
 
 Like in `jq`, you can specify array elements with `$`:
@@ -41,10 +48,16 @@ Like in `jq`, you can specify array elements with `$`:
 
 const query = ['Description.tags.$]
 
-function makeBigger(obj, index, elem) {
-	console.log(elem)
-	return elem.toUpperCase()
+function makeBigger(key, value) {
+	console.log(value)
+	return value.toUpperCase()
 }
+(async () => {
+  jsonwalk.walk(myJson, query, makeBigger)
+})()
+/* should return
+ * clothing
+ * hats
+ */
 
-jsonwalk.walk(myJson, query, makeBigger)
 ```
