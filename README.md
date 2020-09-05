@@ -46,7 +46,7 @@ Like in `jq`, you can specify array elements with `$`:
 
 ```javascript
 
-const query = ['Description.tags.$]
+const query = ['Description.tags.$']
 
 function makeBigger(key, value) {
 	console.log(value)
