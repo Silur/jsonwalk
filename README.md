@@ -1,5 +1,4 @@
-# jsonwalk
-
+# jsonwalk ![](https://img.shields.io/npm/v/jsonwalk)
 This tool allows you to walk a JSON object recursively given a jq-like query array, and run function transforms on the fields contained in this schema.
 
 ## Example
