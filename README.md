@@ -60,3 +60,7 @@ function makeBigger(key, value) {
  */
 
 ```
+
+You can reverse the functionality (run the callback on all fields **not** in the query) by adding another boolean param at the end:
+
+`jsonwalk.walk(myJson, query, makeBigger, true) // true is reversed`

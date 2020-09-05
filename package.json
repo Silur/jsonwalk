@@ -1,6 +1,6 @@
 {
   "name": "jsonwalk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": " Recursively traverse JSON data with jq syntax and apply functions on it's fields ",
   "main": "index.js",
   "scripts": {
