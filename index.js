@@ -1,3 +1,4 @@
+/* eslint-disable */
 async function walk (obj, schema, op, reverse = false, path) {
   if (typeof path === 'undefined') path = []
   for (const i in obj) {
@@ -16,8 +17,8 @@ async function walk (obj, schema, op, reverse = false, path) {
             }
           }
     }
-    return obj
   }
+  return obj
 }
 
 module.exports = {
